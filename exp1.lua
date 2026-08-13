@@ -64,12 +64,15 @@ task.spawn(function()
             end
         end)
 
-        -- Routine 2: Fire the "Continue" event every 1 minute
+        -- Routine 2: Fire the "Continue" event for IDs 69, 68, and 67 every 1 minute
         task.spawn(function()
             while matchActive do
                 pcall(function()
-                    print("[Automation] Firing Continue event...")
-                    ReplicaSignal:FireServer(69 , 68 , 67, "Continue")
+                    print("[Automation] Firing Continue event for IDs 69, 68, 67...")
+                    for _, continueId in ipairs({69, 68, 67}) do
+                        ReplicaSignal:FireServer(continueId, "Continue")
+                        task.wait(0.1)
+                    end
                 end)
                 task.wait(60)
             end
