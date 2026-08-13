@@ -69,7 +69,7 @@ task.spawn(function()
             while matchActive do
                 pcall(function()
                     print("[Automation] Firing Continue event...")
-                    ReplicaSignal:FireServer(69, "Continue")
+                    ReplicaSignal:FireServer(69 , 68 , 67, "Continue")
                 end)
                 task.wait(60)
             end
