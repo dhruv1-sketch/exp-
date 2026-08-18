@@ -56,7 +56,7 @@ task.spawn(function()
                 for _, unit in ipairs(unitsToPlace) do
                     if not matchActive then break end
                     pcall(function()
-                        ReplicaSignal:FireServer(82, "PlaceGameUnit", unit.id, unit.cframe)
+                        ReplicaSignal:FireServer(81, "PlaceGameUnit", unit.id, unit.cframe)
                     end)
                     task.wait(0.2)
                 end
