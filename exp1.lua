@@ -1,4 +1,4 @@
-³local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local ReplicaSignal = ReplicatedStorage:WaitForChild("RemoteEvents"):WaitForChild("ReplicaSignal")
 local Players = game:GetService("Players")
 local player = Players.LocalPlayer
@@ -64,26 +64,12 @@ task.spawn(function()
             end
         end)
 
-        -- Routine 2: Fire the "Continue" event for IDs 69, 75, and 67 every 1 minute
+        -- Routine 2: Fire the "Continue" event every 1 minute
         task.spawn(function()
             while matchActive do
                 pcall(function()
-                    print("[Automation] Firing Continue event for IDs 69, 68, 67...")
-                    for _, continueId in ipairs({69, 68, 67}) do
-                        ReplicaSignal:FireServer(continueId, "Continue")
-                        task.wait(0.1)
-                    end
-                end)
-                task.wait(60)
-            end
-        end)
-
-        -- Routine 3: Fire the "Interacted" event every 1 minute
-        task.spawn(function()
-            while matchActive do
-                pcall(function()
-                    print("[Automation] Firing Interacted event...")
-                    ReplicaSignal:FireServer(506, "Interacted")
+                    print("[Automation] Firing Continue event...")
+                    ReplicaSignal:FireServer(75, "Continue")
                 end)
                 task.wait(60)
             end
