@@ -64,7 +64,7 @@ task.spawn(function()
             end
         end)
 
-        -- Routine 2: Fire the "Continue" event for IDs 69, 68, and 67 every 1 minute
+        -- Routine 2: Fire the "Continue" event for IDs 75 ,69, 68, and 67 every 1 minute
         task.spawn(function()
             while matchActive do
                 pcall(function()
